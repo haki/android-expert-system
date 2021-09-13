@@ -1,264 +1,199 @@
 package md.meral.sialab1.presentation.question
 
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.res.stringResource
 import md.meral.sialab1.presentation.util.BinaryNode
+import md.meral.sialab1.R
 
 class Questions {
+
+    @Composable
     fun createBinaryTree(): BinaryNode<String> {
 
-        val root = BinaryNode("Salut, doresti sa cumperi un calculator nou?")
+        val root = BinaryNode(stringResource(id = R.string.hi_do_you_want_to_buy))
 
-        val rootDa = BinaryNode("Da")
-        root.addChild(rootDa)
+        val rootYes = BinaryNode(stringResource(id = R.string.yes))
+        root.addChild(rootYes)
 
-        val tipDeFolosire = BinaryNode("Pentru ce doriti sa folositi?")
-        rootDa.addChild(tipDeFolosire)
+        val whatDoYouWant = BinaryNode(stringResource(id = R.string.what_do_you_want))
+        rootYes.addChild(whatDoYouWant)
 
-        val educatieSauLucru = BinaryNode("Educatie/Lucru")
-        tipDeFolosire.addChild(educatieSauLucru)
+        val educationWork = BinaryNode(stringResource(id = R.string.education_work))
+        whatDoYouWant.addChild(educationWork)
 
-        val eSLOcupatie = BinaryNode("Cu ce va ocupati?")
-        educatieSauLucru.addChild(eSLOcupatie)
+        val eLProfession = BinaryNode(stringResource(id = R.string.what_profession_do_you_have))
+        educationWork.addChild(eLProfession)
 
-        val student = BinaryNode("Student/a")
-        eSLOcupatie.addChild(student)
+        val student = BinaryNode(stringResource(id = R.string.student))
+        eLProfession.addChild(student)
 
-        val sTipDeAplicatii = BinaryNode("Ce tip de aplicatii folositi?")
-        student.addChild(sTipDeAplicatii)
+        val sAppYouUse = BinaryNode(stringResource(id = R.string.what_kind_of_apps_do_you_use))
+        student.addChild(sAppYouUse)
 
-        val sAIngineria = BinaryNode("Aplicatii de Ingineria/Design")
-        sTipDeAplicatii.addChild(sAIngineria)
+        val sEngineeringDesign = BinaryNode(stringResource(id = R.string.engineering_design))
+        sAppYouUse.addChild(sEngineeringDesign)
 
-        val sAInginariaResult = BinaryNode(
-            "Cerinte Minime de Sistem\n" +
-                    "GPU: Nvidia GTX1650\n" +
-                    "CPU: Intel Core I5 / Ryzen 5\n" +
-                    "RAM: 16GB"
-        )
-        sAIngineria.addChild(sAInginariaResult)
+        val sEngineeringDesignResult = BinaryNode(stringResource(id = R.string.gtx_8gb))
+        sEngineeringDesign.addChild(sEngineeringDesignResult)
 
-        val sAOffice = BinaryNode("Aplicatii de Office")
-        sTipDeAplicatii.addChild(sAOffice)
+        val sAOffice = BinaryNode(stringResource(id = R.string.office))
+        sAppYouUse.addChild(sAOffice)
 
-        val sAOJoc = BinaryNode("Jucati jocuri de calculator?")
-        sAOffice.addChild(sAOJoc)
+        val sAGame = BinaryNode(stringResource(id = R.string.do_you_play_computer_games))
+        sAOffice.addChild(sAGame)
 
-        val sAODa = BinaryNode("Da")
-        sAOJoc.addChild(sAODa)
+        val sAYes = BinaryNode(stringResource(id = R.string.yes))
+        sAGame.addChild(sAYes)
 
-        val sAODaResult = BinaryNode(
-            "Cerinte Minime de Sistem\n" +
-                    "GPU: Nvidia GTX1650\n" +
-                    "CPU: Intel Core I5 / Ryzen 5 \n" +
-                    "RAM: 8GB"
-        )
-        sAODa.addChild(sAODaResult)
+        val sAODaResult = BinaryNode(stringResource(id = R.string.gtx_8gb))
+        sAYes.addChild(sAODaResult)
 
-        val sAONu = BinaryNode("Nu")
-        sAOJoc.addChild(sAONu)
+        val sANo = BinaryNode(stringResource(id = R.string.no))
+        sAGame.addChild(sANo)
 
-        val sAONuResult = BinaryNode(
-            "Cerinte Minime de Sistem\n" +
-                    "GPU: Intel HD Graphics\n" +
-                    "CPU: Intel Core I5/ Ryzen 5\n" +
-                    "RAM: 8GB"
-        )
-        sAONu.addChild(sAONuResult)
+        val sANoResult = BinaryNode(stringResource(id = R.string.intel_8gb))
+        sANo.addChild(sANoResult)
 
-        val inginer = BinaryNode("Inginarie/Design")
-        eSLOcupatie.addChild(inginer)
+        val engineerDesigner = BinaryNode(stringResource(id = R.string.engineer_designer))
+        eLProfession.addChild(engineerDesigner)
 
-        val iTipSO = BinaryNode("Alegeti un sistem de operatie.")
-        inginer.addChild(iTipSO)
+        val eOperatingSystem = BinaryNode(stringResource(id = R.string.choose_an_operating_system))
+        engineerDesigner.addChild(eOperatingSystem)
 
-        val iTipSOMacOS = BinaryNode("MacOS")
-        iTipSO.addChild(iTipSOMacOS)
+        val eOperationSystemMacOS = BinaryNode(stringResource(id = R.string.mac_os))
+        eOperatingSystem.addChild(eOperationSystemMacOS)
 
-        val iTipSOMacOSOcupatie = BinaryNode("Cu ce va ocupati?")
-        iTipSOMacOS.addChild(iTipSOMacOSOcupatie)
+        val eMacOSProfession = BinaryNode(stringResource(id = R.string.what_profession_do_you_have))
+        eOperationSystemMacOS.addChild(eMacOSProfession)
 
-        val iTipSOMDesigner = BinaryNode("Designer")
-        iTipSOMacOSOcupatie.addChild(iTipSOMDesigner)
+        val eMacOSDesigner = BinaryNode(stringResource(id = R.string.designer))
+        eMacOSProfession.addChild(eMacOSDesigner)
 
-        val iTipSOMDResult = BinaryNode(
-            "Cerinte Minime de Sistem\n" +
-                    "Macbook Pro 16\n" +
-                    "1TB 16GB"
-        )
-        iTipSOMDesigner.addChild(iTipSOMDResult)
+        val eMacOSDesignerResult = BinaryNode(stringResource(id = R.string.macbook_pro_16))
+        eMacOSDesigner.addChild(eMacOSDesignerResult)
 
-        val iTipSOMProgramist = BinaryNode("Programist")
-        iTipSOMacOSOcupatie.addChild(iTipSOMProgramist)
+        val eMacOSProgrammer = BinaryNode(stringResource(id = R.string.programmer))
+        eMacOSProfession.addChild(eMacOSProgrammer)
 
-        val iTipSOMPResult = BinaryNode(
-            "Cerinte Minime de Sistem\n" +
-                    "Macbook Pro 13 512GB 16GB"
-        )
-        iTipSOMProgramist.addChild(iTipSOMPResult)
+        val eMacOSProgrammerResult = BinaryNode(stringResource(id = R.string.macbook_pro_13))
+        eMacOSProgrammer.addChild(eMacOSProgrammerResult)
 
-        val iTipSOWindows = BinaryNode("Windows")
-        iTipSO.addChild(iTipSOWindows)
+        val eWindows = BinaryNode(stringResource(id = R.string.windows))
+        eOperatingSystem.addChild(eWindows)
 
-        val iTipSOWResult = BinaryNode(
-            "Cerinte Minime de Sistem\n" +
-                    "GPU: Nvidia GTX1650\n" +
-                    "CPU: Intel Core I5 / Ryzen 5\n" +
-                    "RAM: 16GB"
-        )
-        iTipSOWindows.addChild(iTipSOWResult)
+        val eWindowsResult = BinaryNode(stringResource(id = R.string.gtx_16gb))
+        eWindows.addChild(eWindowsResult)
 
-        val angajat = BinaryNode("Angajati de birou")
-        eSLOcupatie.addChild(angajat)
+        val officeWorker = BinaryNode(stringResource(id = R.string.office_worker))
+        eLProfession.addChild(officeWorker)
 
-        val aJoc = BinaryNode("Jucati jocuri de calculator?")
-        angajat.addChild(aJoc)
+        val officeGamer = BinaryNode(stringResource(id = R.string.do_you_play_computer_games))
+        officeWorker.addChild(officeGamer)
 
-        val aJocDa = BinaryNode("Da")
-        aJoc.addChild(aJocDa)
+        val officeGamerYes = BinaryNode(stringResource(id = R.string.yes))
+        officeGamer.addChild(officeGamerYes)
 
-        val aJocDaResult = BinaryNode(
-            "Cerinte Minime de Sistem\n" +
-                    "GPU: Nvidia GTX1650\n" +
-                    "CPU: Intel Core I5 / Ryzen 5\n" +
-                    "RAM: 8GB"
-        )
-        aJocDa.addChild(aJocDaResult)
+        val officeGamerYesResult = BinaryNode(stringResource(id = R.string.gtx_8gb))
+        officeGamerYes.addChild(officeGamerYesResult)
 
-        val aJocNu = BinaryNode("Nu")
-        aJoc.addChild(aJocNu)
+        val officeGamerNo = BinaryNode(stringResource(id = R.string.no))
+        officeGamer.addChild(officeGamerNo)
 
-        val aJocSO = BinaryNode("Ce tip de sisteme de operatie doriti sa folositi?")
-        aJocNu.addChild(aJocSO)
+        val officeGamerOS = BinaryNode(stringResource(id = R.string.choose_an_operating_system))
+        officeGamerNo.addChild(officeGamerOS)
 
-        val aJocSOW = BinaryNode("Windows")
-        aJocSO.addChild(aJocSOW)
+        val officeGamerOSWindows = BinaryNode(stringResource(id = R.string.windows))
+        officeGamerOS.addChild(officeGamerOSWindows)
 
-        val aJocSOWResult = BinaryNode(
-            "Cerinte Minime de Sistem\n" +
-                    "GPU: Intel HD Graphics\n" +
-                    "CPU: Intel Core I5/ Ryzen 5\n" +
-                    "RAM: 8GB"
-        )
-        aJocSOW.addChild(aJocSOWResult)
+        val officeGamerOSWindowsResult = BinaryNode(stringResource(id = R.string.intel_8gb) )
+        officeGamerOSWindows.addChild(officeGamerOSWindowsResult)
 
-        val aJocSOM = BinaryNode("MacOS")
-        aJocSO.addChild(aJocSOM)
+        val officeMacOS = BinaryNode(stringResource(id = R.string.mac_os))
+        officeGamerOS.addChild(officeMacOS)
 
-        val aJocSOMResult = BinaryNode(
-            "Cerinte Minime de Sistem\n" +
-                    "Macbook Air 13"
-        )
-        aJocSOM.addChild(aJocSOMResult)
+        val officeMacOSResult = BinaryNode(stringResource(id = R.string.macbook_air_13))
+        officeMacOS.addChild(officeMacOSResult)
 
-        val gaming = BinaryNode("Gaming")
-        tipDeFolosire.addChild(gaming)
+        val gaming = BinaryNode(stringResource(id = R.string.gaming))
+        whatDoYouWant.addChild(gaming)
 
-        val tipBuget = BinaryNode("Alegeti bugetul vostru.")
-        gaming.addChild(tipBuget)
+        val budgetType = BinaryNode(stringResource(id = R.string.what_is_your_budget))
+        gaming.addChild(budgetType)
 
-        val bugetMic = BinaryNode("Buget mic")
-        tipBuget.addChild(bugetMic)
+        val smallBudget = BinaryNode(stringResource(id = R.string.small))
+        budgetType.addChild(smallBudget)
 
-        val avetiCalculator = BinaryNode("Aveti calculator cu internet rapid?")
-        bugetMic.addChild(avetiCalculator)
+        val fastInternet = BinaryNode(stringResource(id = R.string.fast_internet))
+        smallBudget.addChild(fastInternet)
 
-        val calculatorDa = BinaryNode("Da")
-        avetiCalculator.addChild(calculatorDa)
+        val internetYes = BinaryNode(stringResource(id = R.string.yes))
+        fastInternet.addChild(internetYes)
 
-        val calculatorDaResult = BinaryNode(
-            "Cerinte Minime de Sistem\n" +
-                    "Gerforce NOW"
-        )
-        calculatorDa.addChild(calculatorDaResult)
+        val internetYesResult = BinaryNode(stringResource(id = R.string.geforce_now))
+        internetYes.addChild(internetYesResult)
 
-        val calculatorNu = BinaryNode("Nu")
-        avetiCalculator.addChild(calculatorNu)
+        val internetNo = BinaryNode(stringResource(id = R.string.no))
+        fastInternet.addChild(internetNo)
 
-        val calculatorNuResult = BinaryNode(
-            "Cerinte Minime de Sistem\n" +
-                    "GPU: Nvidia GTX1650\n" +
-                    "CPU: Intel Core I5 / Ryzen 5\n" +
-                    "RAM: 8GB"
-        )
-        calculatorNu.addChild(calculatorNuResult)
+        val internetNoResult = BinaryNode(stringResource(id = R.string.gtx_8gb))
+        internetNo.addChild(internetNoResult)
 
-        val bugetMare = BinaryNode("Buget mare")
-        tipBuget.addChild(bugetMare)
+        val bigBudget = BinaryNode(stringResource(id = R.string.big))
+        budgetType.addChild(bigBudget)
 
-        val bugetMareResult = BinaryNode(
-            "Cerinte Minime de Sistem\n" +
-                    "GPU: Nvidia RTX2080\n" +
-                    "CPU: Intel Core I5 / Ryzen 5\n" +
-                    "RAM: 16GB"
-        )
-        bugetMare.addChild(bugetMareResult)
+        val bigBudgetResult = BinaryNode(stringResource(id = R.string.rtx))
+        bigBudget.addChild(bigBudgetResult)
 
-        val consolaGamer = BinaryNode("Sunt consola gamer")
-        tipBuget.addChild(consolaGamer)
+        val consoleGamer = BinaryNode(stringResource(id = R.string.console_gamer))
+        budgetType.addChild(consoleGamer)
 
-        val tipConsol = BinaryNode("Ce tip de consol doriti?")
-        consolaGamer.addChild(tipConsol)
+        val consoleType = BinaryNode(stringResource(id = R.string.choose_a_console))
+        consoleGamer.addChild(consoleType)
 
-        val tipPortabil = BinaryNode("Portabil")
-        tipConsol.addChild(tipPortabil)
+        val portable = BinaryNode(stringResource(id = R.string.portable))
+        consoleType.addChild(portable)
 
-        val nintendo = BinaryNode(
-            "Cerinte Minime de Sistem\n" +
-                    "Nintendo Switch"
-        )
-        tipPortabil.addChild(nintendo)
+        val nintendo = BinaryNode(stringResource(id = R.string.nintendo))
+        portable.addChild(nintendo)
 
-        val tipMasa = BinaryNode("De masa")
-        tipConsol.addChild(tipMasa)
+        val unMovable = BinaryNode(stringResource(id = R.string.unmovable))
+        consoleType.addChild(unMovable)
 
-        val console = BinaryNode("Alegeti o consola")
-        tipMasa.addChild(console)
+        val console = BinaryNode(stringResource(id = R.string.choose_a_console))
+        unMovable.addChild(console)
 
-        val playstation = BinaryNode("Playstation")
+        val playstation = BinaryNode(stringResource(id = R.string.playstation))
         console.addChild(playstation)
 
-        val playstationResult = BinaryNode(
-            "Cerinte Minime de Sistem\n" +
-                    "Playstation 5"
-        )
+        val playstationResult = BinaryNode(stringResource(id = R.string.playstation_5))
         playstation.addChild(playstationResult)
 
-        val xbox = BinaryNode("Xbox")
+        val xbox = BinaryNode(stringResource(id = R.string.xbox))
         console.addChild(xbox)
 
-        val xboxResult = BinaryNode(
-            "Cerinte Minime de Sistem\n" +
-                    "Xbox Series S si abonament Game Pass"
-        )
+        val xboxResult = BinaryNode(stringResource(id = R.string.xbox_S))
         xbox.addChild(xboxResult)
 
-        val casa = BinaryNode("Casa")
-        tipDeFolosire.addChild(casa)
+        val home = BinaryNode(stringResource(id = R.string.home))
+        whatDoYouWant.addChild(home)
 
-        val cSO = BinaryNode("Alegeti un sistem de operatie")
-        casa.addChild(cSO)
+        val homeOS = BinaryNode(stringResource(id = R.string.choose_an_operating_system))
+        home.addChild(homeOS)
 
-        val cWindows = BinaryNode("Windows")
-        cSO.addChild(cWindows)
+        val hWindows = BinaryNode(stringResource(id = R.string.windows))
+        homeOS.addChild(hWindows)
 
-        val cWindowsResult = BinaryNode(
-            "Cerinte Minime de Sistem\n" +
-                    "GPU: Intel HD Graphics\n" +
-                    "CPU: Intel Core I3 / Ryzen 3\n" +
-                    "Ram: 8GB"
-        )
-        cWindows.addChild(cWindowsResult)
+        val hWindowsResult = BinaryNode(stringResource(id = R.string.intel_8gb))
+        hWindows.addChild(hWindowsResult)
 
-        val cMacOS = BinaryNode("MacOS")
-        cSO.addChild(cMacOS)
+        val hMacOS = BinaryNode(stringResource(id = R.string.mac_os))
+        homeOS.addChild(hMacOS)
 
-        val cMacOSResult = BinaryNode(
-            "Cerinte Minime de Sistem\n" +
-                    "Macbook Air 13"
-        )
-        cMacOS.addChild(cMacOSResult)
+        val hMacOSResult = BinaryNode(stringResource(id = R.string.macbook_air_13))
+        hMacOS.addChild(hMacOSResult)
 
-        val rootNu = BinaryNode("Nu")
-        root.addChild(rootNu)
+        val rootNo = BinaryNode(stringResource(id = R.string.no))
+        root.addChild(rootNo)
 
         return root
     }
