@@ -8,9 +8,10 @@ import androidx.compose.ui.graphics.Color
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 private val LightColorPalette = lightColors(
-    primary = Color(0xFF673AB7),
+    primary = AwsColor1,
     primaryVariant = Purple700,
-    secondary = Teal200,
+    secondary = AwsColor3,
+    background = AwsColor3
 )
 
 @Composable
@@ -22,7 +23,7 @@ fun SIALab1Theme(content: @Composable() () -> Unit) {
 
     SideEffect {
         systemUiController.setSystemBarsColor(
-            color = Color.White,
+            color = colors.background,
             darkIcons = useDarkIcons
         )
     }
@@ -31,6 +32,6 @@ fun SIALab1Theme(content: @Composable() () -> Unit) {
         colors = colors,
         typography = Typography,
         shapes = Shapes,
-        content = content
+        content = content,
     )
 }
